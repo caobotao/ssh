@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.atguigu.ssh.entities">
+	<class name="Employee" table="ssh_employee">
+		<id name="id" type="java.lang.Integer">
+			<column name="id"></column>
+			<generator class="native"></generator>
+		</id>
+		<property name="lastName" type="java.lang.String">
+			<column name="last_name"></column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email"></column>
+		</property>
+		<property name="birth" type="java.util.Date">
+			<column name="birth"></column>
+		</property>
+		<property name="createTime" type="java.util.Date">
+			<column name="create_time"></column>
+		</property>
+		<many-to-one name="department" class="Department">
+			<column name="department_id"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>        
