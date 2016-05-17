@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
 
+import com.atguigu.ssh.service.DepartmentService;
 import com.atguigu.ssh.service.EmployeeService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -14,14 +15,23 @@ public class EmployeeAction extends ActionSupport implements RequestAware {
 
 	private static final long serialVersionUID = -6360419857373646063L;
 	private EmployeeService employeeService;
+	private DepartmentService departmentService;
 	private Integer id;
 	private InputStream inputStream;
-
+	
+	/**
+	 * 列出所有员工信息
+	 * @return
+	 */
 	public String list() {
 		request.put("employees", employeeService.findAll());
 		return "list";
 	}
 
+	/**
+	 * 删除单个员工信息
+	 * @return
+	 */
 	public String delete() {
 		try {
 			employeeService.delete(id);
@@ -38,6 +48,15 @@ public class EmployeeAction extends ActionSupport implements RequestAware {
 		return "delete";
 	}
 
+	/**
+	 * 添加一个新员工
+	 * @return
+	 */
+	public String input(){
+		request.put("departments", departmentService.findAll());
+		return INPUT;
+	}
+	
 	public InputStream getInputStream() {
 		return inputStream;
 	}
@@ -46,6 +65,10 @@ public class EmployeeAction extends ActionSupport implements RequestAware {
 		this.employeeService = employeeService;
 	}
 
+	public void setDepartmentService(DepartmentService departmentService) {
+		this.departmentService = departmentService;
+	}
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
