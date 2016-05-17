@@ -17,6 +17,11 @@ public class EmployeeDao {
 		return sessionFactory.getCurrentSession();
 	}
 	
+	public void delete(Integer id){
+		String hql = "DELETE FROM Employee e where e.id = ?";
+		getSession().createQuery(hql).setInteger(0, id).executeUpdate();
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<Employee> findAll(){
 		String hql = "FROM Employee e left outer join fetch e.department";

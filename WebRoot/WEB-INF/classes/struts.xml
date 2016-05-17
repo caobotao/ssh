@@ -11,6 +11,11 @@
     <package name="default" namespace="/" extends="struts-default">
 		<action name="emp-*" class="employeeAction" method="{1}">
 			<result name="list">/WEB-INF/views/emp-list.jsp</result>
+			<result name="delete" type="stream">
+		        <param name="contentType">text/html</param>
+		        <param name="inputName">inputStream</param>
+		    </result>
+			<!-- <result name="success" type="redirect">/emp-list</result> -->
 		</action>
     </package>
 

@@ -16,7 +16,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
+	<script type="text/javascript" src="<%=path %>/scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".delete").click(function(){
+				var lastName = $(this).next(":hidden").val();
+				var flag = confirm("确定要"+lastName+"删除吗？");
+				if(flag){
+					var $tr = $(this).parent().parent();
+					var url = this.href;
+					var args = {"time":new Date()};
+					$.post(url,args,function(data){
+						if(data == "1"){
+							//删除成功	
+							alert("删除成功！");
+							$tr.remove();
+						} else{
+							//删除失败
+							alert("删除失败！");
+						}
+					});
+				} 
+				return false;
+			});
+		})
+	</script>
   </head>
   
   <body>
@@ -33,6 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   				<td>BIRTH</td>
   				<td>CREATETIME</td>
   				<td>DEPARTMENT</td>
+  				<td>DELETE</td>
   			</tr>
 	  		<s:iterator value="#request.employees" >
 	  			<tr>
@@ -42,6 +67,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  				<td>${birth }</td>
 	  				<td>${createTime }</td>
 	  				<td>${department.departmentName }</td>
+	  				<td>
+	  					<a class="delete" href="emp-delete?id=${id }">删除</a>
+	  					<input type="hidden" value="${lastName }"/>
+	  				</td>
+	  				
 	  			</tr>
 	  		</s:iterator>
   		</table>

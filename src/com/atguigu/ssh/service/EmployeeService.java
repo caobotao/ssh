@@ -12,6 +12,10 @@ public class EmployeeService {
 		this.employeeDao = employeeDao;
 	}
 	
+	public void delete(Integer id){
+		employeeDao.delete(id);
+	}
+	
 	public List<Employee> findAll(){
 		return employeeDao.findAll();
 	}
