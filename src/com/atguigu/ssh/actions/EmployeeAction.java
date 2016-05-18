@@ -25,6 +25,7 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 	private InputStream inputStream;
 	private Map<String, Object> request;
 	private Employee model;
+	private String lastName;
 	
 	/**
 	 * 列出所有员工信息
@@ -52,7 +53,7 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 			e.printStackTrace();
 		}
 		
-		return "delete";
+		return "ajax-success";
 	}
 
 	/**
@@ -72,6 +73,15 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 		model.setCreateTime(new Date());
 		employeeService.saveOrUpdate(model);
 		return SUCCESS;
+	}
+	
+	public String validateLastName() throws UnsupportedEncodingException{
+		if(employeeService.isLastNameValid(lastName)){
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		}else{
+			inputStream = new ByteArrayInputStream("0".getBytes("UTF-8"));
+		}
+		return "ajax-success";
 	}
 	
 	public void prepareSave(){
@@ -94,6 +104,10 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 		this.id = id;
 	}
 
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
 	@Override
 	public void setRequest(Map<String, Object> arg0) {
 		this.request = arg0;

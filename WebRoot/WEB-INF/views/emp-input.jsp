@@ -16,10 +16,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+	<script type="text/javascript" src="<%=path %>/scripts/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+ 		$(function(){
+			$(":input[name=lastName]").change(function(){
+				 var val = $(this).val();
+				 val = $.trim(val);
+				 var $this = $(this);
+				 if(val != ""){
+					var url = "emp-validateLastName";
+					$this.nextAll("font").remove();
+					var args = {"lastName":val,"time":new Date()};
+					$.post(url,args,function(data){
+						if(data == "1"){//lastName可用
+							$this.after("<font color='green'>lastName可用</font>");
+						}else if(data = "0"){//lastName不可用
+							$this.after("<font color='red'>lastName不可用</font>");
+						}else{// 服务器错误
+							alert("服务器错误!");
+						}
+					});
+				}else{
+					alert("lastName不能为空！");
+					$(this).val("");
+					$this.focus();
+				} 
+			});
+		});
+	</script>
   </head>
   
   <body>

@@ -20,4 +20,9 @@ public class EmployeeDao extends BaseDao{
 	public void saveOrUpdate(Employee employee){
 		getSession().saveOrUpdate(employee);
 	}
+	
+	public Employee getEmployeeByLastName(String lastName){
+		String hql = "FROM Employee e where e.lastName = ?";
+		return (Employee) getSession().createQuery(hql).setString(0, lastName).uniqueResult();
+	}
 }

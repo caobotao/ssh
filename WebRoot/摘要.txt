@@ -1,0 +1,30 @@
+摘要
+作为青年一代中的佼佼者的大学生，对各种新鲜物品有着强烈的购买意愿以及对各种他们所不了解或是感兴趣的物品也有着极大的购买需求。因此随着社会上新产品的快速更新换代，大学生手中有不少物品都处于闲置状态。
+然而校园物品交换并没有具体的流通平台和相关管理。只有极少数同学在毕业时通过校内摆地摊或是在校园论坛留言等方式来处理二手物品，但是这几种方法成交率并不高，还容易造成大量的资源浪费。因此，构建一个具有校园特色的闲置物品交换平台显得极为迫切。
+校园中的闲置物品不能够合理使用，这不仅会造成极大的浪费，还会在校园中滋生攀比，浪费等不良之风。通过构建具有校园特色的物物交换平台可以为学生提供丰富的信息资源来进行以物换物，同时形成一个电子化、信息化的平台来提供全天候服务。
+在这个现实背景下，开发校园物物交换平台有着很大的现实意义。具体来说，可以利用大学生对物品的互补性，周期性，普遍性，在学生中间形成资源合理配置的良好局面，达到低碳环保的状态，从根本上解决传统校园二手信息发布交流方式的弊端，使得校园各种二手商品信息得到了有效的整合，便利学生。
+
+关键词：物物交换校园，O2O，交换平台，二手交换
+
+
+
+University students, the best ones of teenagers, have strong intention on all kinds of newgoods and need for something which is unknown or not interested for them 
+,what's more, the update speed of these goods is very fast in the society ,which leads to the phenomenon that a lot of  goods are not in used. 
+
+There are not such platforms and related managements for campus goods swap yet. Only few students deal with their idle goods through setting up a street stall
+or leaving messages on campus forums , but the turnover rate is pretty low .Plus, the traditonal ways also lead to the resource waste.
+
+Thus, it seems urgent to build such a idle goods swap platform  possessing campus features. 
+
+If the plentiful idle goods are not used reasonably, it will not only lead to huge waste, but also generate the atmosphere of unrealisticcompare on campus. 
+
+Building a campus goods exchange platform possessing campus feature can offer students enough information resource 
+and create a platform based on electronization information offering all-weather service for students. 
+
+Under such the background, developing The Campus Swap System has great significance. 
+
+Specifically speaking，it orders to create a wonderful phenomenon of configuring the resource reasonably between students using the complementarity, periodicity, catholicity of goods, which solves the disadvantages of the ways how to deal with traditional campus idle goods and make all kinds of campus idle goods information get effective integration. 
+
+In a word, The system makes it more convenient for students.
+
+KEYWORDS: goods swap on campus，O2O，exchange platform，second hand swap
