@@ -16,4 +16,8 @@ public class EmployeeDao extends BaseDao{
 		String hql = "FROM Employee e left outer join fetch e.department";
 		return getSession().createQuery(hql).list();
 	}
+	
+	public void saveOrUpdate(Employee employee){
+		getSession().saveOrUpdate(employee);
+	}
 }

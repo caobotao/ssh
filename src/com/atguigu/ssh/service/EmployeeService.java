@@ -19,4 +19,8 @@ public class EmployeeService {
 	public List<Employee> findAll(){
 		return employeeDao.findAll();
 	}
+	
+	public void saveOrUpdate(Employee employee){
+		employeeDao.saveOrUpdate(employee);
+	}
 }
