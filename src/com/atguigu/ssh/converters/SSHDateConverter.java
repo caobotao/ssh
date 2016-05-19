@@ -18,7 +18,7 @@ public class SSHDateConverter extends StrutsTypeConverter {
 	public Object convertFromString(Map context, String[] values, Class toClass) {
 		if(toClass == Date.class){
 			try {
-				format.parse(values[0]);
+				return format.parse(values[0]);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}

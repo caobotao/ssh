@@ -27,4 +27,8 @@ public class EmployeeService {
 	public boolean isLastNameValid(String lastName){
 		return employeeDao.getEmployeeByLastName(lastName) == null;
 	}
+	
+	public Employee get(Integer id){
+		return employeeDao.get(id);
+	}
 }

@@ -25,4 +25,8 @@ public class EmployeeDao extends BaseDao{
 		String hql = "FROM Employee e where e.lastName = ?";
 		return (Employee) getSession().createQuery(hql).setString(0, lastName).uniqueResult();
 	}
+	
+	public Employee get(Integer id){
+		return (Employee) getSession().get(Employee.class, id);
+	}
 }

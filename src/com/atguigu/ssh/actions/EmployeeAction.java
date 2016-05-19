@@ -70,7 +70,9 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 	 * @return
 	 */
 	public String save(){
-		model.setCreateTime(new Date());
+		if(id == null){
+			model.setCreateTime(new Date());
+		}
 		employeeService.saveOrUpdate(model);
 		return SUCCESS;
 	}
@@ -85,7 +87,20 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 	}
 	
 	public void prepareSave(){
+		System.out.println("prepareSave()");
 		model = new Employee();
+	}
+	
+	public void prepareInput(){
+		System.out.println("prepareInput()");
+		if (id != null) {
+			model = employeeService.get(id);
+		}
+	}
+	
+	@Override
+	public void prepare() throws Exception {
+		System.out.println("prepare()");
 	}
 	
 	public InputStream getInputStream() {
@@ -112,9 +127,6 @@ public class EmployeeAction extends ActionSupport implements RequestAware,
 	public void setRequest(Map<String, Object> arg0) {
 		this.request = arg0;
 	}
-
-	@Override
-	public void prepare() throws Exception {}
 
 	@Override
 	public Employee getModel() {
